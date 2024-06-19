@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub</title>
+    <link rel="icon" type="image/png" href="../images/GameController.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/gamehub.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-index" id="home-page">
+        <header>
+            <a href="../index.html" class="back-arrow">&#8592;</a>
+            <h1>Portfolio <i class="fas fa-briefcase" aria-hidden="true"></i></h1>
+        </header>
+        <div class="main-menu">
+            <div class="menu-item" onclick="navigateToGame('../html/wordguessing.html')"><i class="fa-solid fa-keyboard" aria-hidden="true"></i><span class="item-name">Word Guessing Game</span></div>
+            <div class="menu-item" onclick="navigateToGame('../html/connect4.html')"><i class="fa-solid fa-arrow-up-right-dots" aria-hidden="true"></i><span class="item-name">Connect 4 Game</span></div>
+            <div class="menu-item" onclick="navigateToGame('../html/memory.html')"><i class="fa-solid fa-brain" aria-hidden="true"></i><span class="item-name">Memory Game</span></div>
+            <div class="menu-item" onclick="navigateToGame('../html/simon.html')"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><span class="item-name">Simon Trickster Game</span></div>
+            <div class="menu-item" onclick="navigateToGame('../html/2048.html')"><i class="fa-solid fa-2" aria-hidden="true"></i></i><span class="item-name">2048 Game</span></div>
+            <div class="menu-item" onclick="navigateToGame('../html/tictactoe.html')"><i class="fa-regular fa-circle-xmark" aria-hidden="true"></i><span class="item-name">Tic Tac Toe</span></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/gamehub.js"></script>
+    <script src="https://kit.fontawesome.com/696b4927a0.js" crossorigin="anonymous"></script>
+</body>
+</html>

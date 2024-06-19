@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/png" href="../images/jvblogo.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="main-content">
+    <header class="container header active" id="home">
+        <div class="header-content">
+            <div class="left-header">
+                <div class="h-shape"></div>
+                <div class="image">
+                    <img src="../images/PortfolioPic.jpg" alt="">
+                </div>
+            </div>
+            <div class="right-header">
+                <h1 class="name">
+                    Hi, I'm <span>Jason Victor Berdat.</span>
+                    <br>
+                    Junior Software Developer.
+                </h1>
+                <!-- <p>
+                    ITCA Graduate, studied Software Development for .
+                    I have a strong interest in software development and am committed to building or designing applications and websites.
+                    Aiming to increase my knowledge and expertise in programming even further.
+                </p> -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container" id="portfolio">
+            <div class="main-title">
+                <h2>My <span>Portfolio</span></h2>
+            </div>
+            <p class="port-text">
+                Here is some of my work that I've done in various programming languages.
+            </p>
+            <div class="portfolios">
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="../images/sudoku.png" alt="">
+                    </div>
+                    <div  class="hover-items">
+                        <a href="../html/sudoku_solver.html">
+                            <h3>Sudoku Solver</h3>
+                        </a>
+                        <div class="icons">
+                            <a href="../html/sudoku_solver.html" class="icon">
+                                <i class="fa fa-hand-point-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="../images/weather.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <a href="../html/weather.html">
+                            <h3>Weather Application</h3>
+                        </a>
+                        <div class="icons">
+                            <a href="../html/weather.html" class="icon">
+                                <i class="fa fa-hand-point-up"></i>
+                            </a>
+                        </div>
+                    </div>                
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="../images/To-do_List.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <a href="../html/todo.html">
+                            <h3>To Do List</h3>
+                        </a>
+                        <div class="icons">
+                            <a href="../html/todo.html" class="icon">
+                                <i class="fa fa-hand-point-up"></i>
+                            </a>
+                        </div>
+                    </div>                
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="../images/lunchapp.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <a href="../html/lunchvideo.html">
+                            <h3>Lunch Order App<br>(ASP.NET Core)</h3>
+                        </a>
+                        <div class="icons">
+                            <a href="../html/lunchvideo.html" class="icon">
+                                <i class="fa fa-hand-point-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="../images/gamehub.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <a href="../html/gamehub.html">
+                            <h3>Game Hub</h3>
+                        </a>
+                        <div class="icons">
+                            <a href="../html/gamehub.html" class="icon">
+                                <i class="fa fa-hand-point-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="../images/dailyapp.jpg" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <a href="../html/bankvideo.html">
+                            <h3>Daily Interest<br>Calculator<br>(App)</h3>
+                        </a>
+                        <div class="icons">
+                            <a href="../html/bankvideo.html" class="icon">
+                                <i class="fa fa-hand-point-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="controls">
+        <div class="control active-btn" data-id="home" >
+            <i class="fas fa-home"></i>
+        </div>
+        <div class="control" data-id="portfolio">
+            <i class="fas fa-briefcase"></i>
+        </div>
+    </div>
+    <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div>
+    <script src="../js/app.js"></script>
+</body>
+</html>

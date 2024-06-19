@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body {
+    background-color: #121212;
+    /* background: linear-gradient(135deg, #0d0422, #450eba); */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff;
+    background-color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.back-arrow {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    /*display: none;*/ /* Initially hidden */
+}
+
+h1 {
+    margin: 0;
+    color: #ffffff;
+}
+
+h3 {
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.container-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-top: 80px; /* Adjust for the fixed header height */
+    text-align: center;
+    padding: 20px;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.menu-item {
+    color: #ffffff;
+    background-color: #333;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.menu-item i {
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.menu-item .item-name {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.menu-item:hover {
+    transform: scale(1.1);
+    opacity: 0.2;
+}
+
+.menu-item:hover .item-name {
+    display: block;
+    opacity: 0.9;
+}
+
+.menu-item:hover i {
+    transform: scale(1.2);
+}
+
+.content {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+label {
+    margin: 10px 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 1em 2em;
+    border: none;
+    outline: none;
+    background-color: #6200ea;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 0.3em;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+@media screen and (max-width: 37.5em){
+    .buttons{
+        width: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="../css/todo.css">
+    <title>To-Do List</title>
+    <link rel="icon" type="image/png" href="../images/jvblogo.png">
+</head>
+    <link rel="icon" href="bars-icon.svg">
+<body>
+    <header>
+        <a href="../index.html" class="back-arrow">&#8592;</a>
+        <h1>Portfolio <i class="fas fa-briefcase" aria-hidden="true"></i></h1>
+    </header>
+
+    <h2>To-Do List</h2>
+    <div class="wrapper">
+        <div class="task-input">
+            <img src="bars-icon.svg">
+            <input type="text" placeholder="Add a new task">
+        </div>
+
+        <div class="controls">
+            <div class="filters">
+                <span id="all" class="active">
+                    All
+                </span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+        </div>
+        <ul class="task-box"></ul>
+    </div>
+
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+    <script src="../js/todo.js"></script>
+</body>
+</html>
