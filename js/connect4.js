@@ -1,5 +1,5 @@
 //Initial References
-const container = document.querySelector(".container");
+const container = document.querySelector(".grid-container");
 const playerTurn = document.getElementById("playerTurn");
 const startScreen = document.querySelector(".startScreen");
 const startButton = document.getElementById("start");
@@ -20,34 +20,40 @@ const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min
 
 //Loop through array and check for same values
 const verifyArray = (arrayElement) => {
-    let bool = false; 
+    let bool = false;
     let elementCount = 0;
     arrayElement.forEach((element, index) => {
-        if (element == currentPlayer){
+        if (element == currentPlayer) {
             elementCount += 1;
-            if(elementCount == 4){
+            if (elementCount == 4) {
                 bool = true;
             }
         }
-        else{
+        else {
             elementCount = 0;
         }
     });
     return bool;
 };
 
+const showStartScreen = (text) => {
+    message.innerHTML = text;
+    startScreen.classList.remove("hide");
+    startScreen.style.top = `${document.querySelector('.navbar').offsetHeight}px`;
+};
+
 //Check for game over
 const gameOverCheck = () => {
-    let truthCounnt = 0;
-    for(let innerArray of initialMatrix){
-        if(innerArray.every((val) => val != 0)){
-            truthCounnt += 1;
+    let truthCount = 0;
+    for (let innerArray of initialMatrix) {
+        if (innerArray.every((val) => val != 0)) {
+            truthCount += 1;
         }
-        else{
+        else {
             return false;
         }
     }
-    if(truthCounnt == 6){
+    if (truthCount == 6) {
         message.innerText = "Game Over";
         startScreen.classList.remove("hide");
     }
@@ -62,13 +68,13 @@ const checkAdjacentRowValues = (row) => {
 const checkAdjacentColumnValues = (column) => {
     let colWinCount = 0, colWinBool = false;
     initialMatrix.forEach((element, index) => {
-        if(element[column] == currentPlayer){
+        if (element[column] == currentPlayer) {
             colWinCount += 1;
-            if(colWinCount == 4){
+            if (colWinCount == 4) {
                 colWinBool = true
             }
         }
-        else{
+        else {
             colWinCount = 0;
         }
     });
@@ -81,8 +87,8 @@ const getRightDiagonal = (row, column, rowLength, columnLength) => {
     let rowCount = row;
     let columnCount = column;
     let rightDiagonal = [];
-    while(rowCount > 0){
-        if (columnCount >= columnLength - 1){
+    while (rowCount > 0) {
+        if (columnCount >= columnLength - 1) {
             break;
         }
         rowCount -= 1;
@@ -91,13 +97,13 @@ const getRightDiagonal = (row, column, rowLength, columnLength) => {
     }
     rowCount = row;
     columnCount = column;
-    while(rowCount < rowLength){
-        if(columnCount < 0){
+    while (rowCount < rowLength) {
+        if (columnCount < 0) {
             break;
         }
-    rightDiagonal.push(initialMatrix[rowCount][columnCount]);
-    rowCount += 1;
-    columnCount -= 1;
+        rightDiagonal.push(initialMatrix[rowCount][columnCount]);
+        rowCount += 1;
+        columnCount -= 1;
     }
     return rightDiagonal;
 };
@@ -106,18 +112,18 @@ const getLeftDiagonal = (row, column, rowLength, columnLength) => {
     let rowCount = row;
     let columnCount = column;
     let leftDiagonal = [];
-    while(rowCount > 0){
-        if(columnCount <= 0){
+    while (rowCount > 0) {
+        if (columnCount <= 0) {
             break;
         }
-        rowCount -= 1; 
+        rowCount -= 1;
         columnCount -= 1;
         leftDiagonal.unshift(initialMatrix[rowCount][columnCount]);
     }
-    rowCount = row; 
-    columnCount = column; 
-    while(rowCount < rowLength){
-        if(columnCount >= columnLength){
+    rowCount = row;
+    columnCount = column;
+    while (rowCount < rowLength) {
+        if (columnCount >= columnLength) {
             break;
         }
         leftDiagonal.push(initialMatrix[rowCount][columnCount]);
@@ -136,7 +142,7 @@ const checkAdjacentDiagonalValues = (row, column) => {
     };
     let columnLength = initialMatrix[row].length;
     let rowLength = initialMatrix.length;
-    
+
     //Store left and right diagonal array
     tempChecks.leftTop = [
         ...getLeftDiagonal(row, column, rowLength, columnLength),
@@ -148,7 +154,7 @@ const checkAdjacentDiagonalValues = (row, column) => {
 
     //check both arrays for similarities
     diagWinBool = verifyArray(tempChecks.rightTop);
-    if (!diagWinBool){
+    if (!diagWinBool) {
         diagWinBool = verifyArray(tempChecks.leftTop);
     }
     return diagWinBool;
@@ -158,26 +164,26 @@ const checkAdjacentDiagonalValues = (row, column) => {
 const winCheck = (row, column) => {
     //if any of the functions return true we return true
     return checkAdjacentRowValues(row) ? true :
-    checkAdjacentColumnValues(column) ? true :
-    checkAdjacentDiagonalValues(row, column) ? true : false;
+        checkAdjacentColumnValues(column) ? true :
+            checkAdjacentDiagonalValues(row, column) ? true : false;
 };
 
 //Sets the circle to exact points 
 const setPiece = (startCount, colValue) => {
     let rows = document.querySelectorAll(".grid-row");
     //initially it will place the circles in the last row else if no place is available we will decrement the count until we find an empty slot
-    if(initialMatrix[startCount][colValue] != 0) {
+    if (initialMatrix[startCount][colValue] != 0) {
         startCount -= 1;
         setPiece(startCount, colValue);
     }
-    else{
+    else {
         //place circle
         let currentRow = rows[startCount].querySelectorAll(".grid-box");
-        currentRow[colValue].classList.add("filled",`player${currentPlayer}`);
+        currentRow[colValue].classList.add("filled", `player${currentPlayer}`);
         //update matrix 
         initialMatrix[startCount][colValue] = currentPlayer;
         //Check for wins
-        if(winCheck(startCount, colValue)){
+        if (winCheck(startCount, colValue)) {
             message.innerHTML = `Player <span>${currentPlayer}</span> wins`;
             startScreen.classList.remove("hide");
             return false;
@@ -200,11 +206,11 @@ const fillBox = (e) => {
 
 //Create matrix
 const matrixCreator = () => {
-    for (let innerArray in initialMatrix){
+    for (let innerArray in initialMatrix) {
         let outerDiv = document.createElement("div");
         outerDiv.classList.add("grid-row");
         outerDiv.setAttribute("data-value", innerArray);
-        for(let j in initialMatrix[innerArray]){
+        for (let j in initialMatrix[innerArray]) {
             //set all matrix values to 0
             initialMatrix[innerArray][j] = [0];
             let innerDiv = document.createElement("div");
@@ -220,11 +226,11 @@ const matrixCreator = () => {
 };
 
 //initialise game
-window.onload = startGame = async () => {
+const startGame = async () => {
     //between 1 and 2
     currentPlayer = generateRandomNumber(1, 3);
     container.innerHTML = "";
-    await matrixCreator(); 
+    await matrixCreator();
     playerTurn.innerHTML = `Player <span>${currentPlayer}'s</span> turn`
 };
 
@@ -232,4 +238,31 @@ window.onload = startGame = async () => {
 startButton.addEventListener("click", () => {
     startScreen.classList.add("hide");
     startGame();
+});
+
+// Ensure DOM is fully loaded before running the script
+document.addEventListener("DOMContentLoaded", () => {
+    startGame();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const gamePage = document.getElementById("game-page");
+    const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+    function adjustPadding() {
+        const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+        const isSmallScreen = window.innerWidth <= 768;
+
+        if (isSmallScreen && isLandscape) {
+            gamePage.style.paddingTop = `${navbarHeight + 450}px`; // Extra padding for landscape on small screens
+        } else {
+            gamePage.style.paddingTop = "200px"; // Default padding for larger screens
+        }
+    }
+
+    // Adjust padding on load
+    adjustPadding();
+
+    // Adjust padding on orientation change
+    window.addEventListener("resize", adjustPadding);
 });

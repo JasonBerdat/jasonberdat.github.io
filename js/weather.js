@@ -5,22 +5,22 @@ const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 
 search.addEventListener('click', () => {
-    
+
     const APIKey = '6cc52dbadde74de0c7f6d50d8fd1cb34';
     const city = document.querySelector('.search-box input').value;
 
-    if(city === '')
+    if (city === '')
         return;
 
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`).then(response => response.json()).then(json => {
-        if(json.cod === '404'){
+        if (json.cod === '404') {
             container.style.height = '400px';
             weatherBox.style.display = 'none';
             weatherDetails.style.display = 'none';
             error404.style.display = 'block';
             error404.classList.add('fadeIn');
-            return; 
+            return;
         }
         error404.style.display = 'none';
         error404.classList.remove('fadeIn');
@@ -31,7 +31,7 @@ search.addEventListener('click', () => {
         const humidity = document.querySelector('.weather-details .humidity span');
         const wind = document.querySelector('.weather-details .wind span');
 
-        switch(json.weather[0].main){
+        switch (json.weather[0].main) {
             case 'Clear':
                 image.src = '../images/clear.png';
                 break;

@@ -86,14 +86,12 @@ colorPart.forEach((element) => {
     }
     if (e.target.classList[0] == randomColors[clickCount]) {
       //Color blick effect on click
-      e.target.style.backgroundColor = `${
-        colors[randomColors[clickCount]]["new"]
-      }`;
+      e.target.style.backgroundColor = `${colors[randomColors[clickCount]]["new"]
+        }`;
       await delay(300);
 
-      e.target.style.backgroundColor = `${
-        colors[randomColors[clickCount]]["current"]
-      }`;
+      e.target.style.backgroundColor = `${colors[randomColors[clickCount]]["current"]
+        }`;
 
       //User click
       clickCount += 1;

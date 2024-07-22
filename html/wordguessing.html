@@ -14,21 +14,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container-index" id="game-page">
-        <header>
-            <a href="../html/gamehub.html" class="back-arrow">&#8592;</a>
-            <h1>Hub <i class="fa fa-gamepad" aria-hidden="true"></i> Word Guessing</h1>
-        </header>
-        <div class="wrapper">
-            <div class="hint-ref"></div>
-            <div id="user-input-section"></div>
-            <div id="message"></div>
-            <div id="letter-container"></div>
-          </div>
-          <div class="controls-container">
-            <div id="result"></div>
-            <div id="word"></div>
-            <button id="start">Start Game</button>
+    <nav class="navbar navbar-expand-lg p-3 bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <div class="dropdown">
+                <a class="navbar-brand dropdown-toggle fs-2" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu <i class="fas fa-gamepad" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="../html/gamehub.html">Back To Hub</a></li>
+                    <li><a class="dropdown-item" href="../index.html">Back To Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid mt-5 pt-5">
+        <h1 class="display-3 font-weight-bold text-light mb-4 text-center">Word Guessing</h1>
+        <div class="container" id="game-page">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 controls-container hide">
+                    <div id="result"></div>
+                    <div id="word"></div>
+                    <button id="start">Restart</button>
+                </div>
+                <div class="col-12 col-md-8 col-lg-6 wrapper">
+                    <div class="hint-ref"></div>
+                    <div id="user-input-section"></div>
+                    <div id="message"></div>
+                    <div id="letter-container"></div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

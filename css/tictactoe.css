@@ -3,39 +3,19 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Montserrat;
-  }
-  body {
+}
+
+body {
     height: 100vh;
     background-color: #121212;
     margin: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
-  }
-
-  html {
-    font-size: 16px;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    color: #ffffff;
-    background-color: #333;
-    width: 100%;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
 }
 
-.back-arrow {
-    font-size: 24px;
-    color: #fff;
-    text-decoration: none;
-    margin-right: 10px;
-    /*display: none;*/ /* Initially hidden */
+html {
+    font-size: 16px;
 }
 
 h1 {
@@ -44,55 +24,66 @@ h1 {
 }
 
 .wrapper {
+    background-color: #ffffff;
+    border-radius: 0.6em;
+    margin-top: 1.5em;
+    box-sizing: content-box;
+    width: 22em;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 57%;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+    top: 60%;
     left: 50%;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2vmin;
-    width: 70vmin;
-    height: 70vmin;
+    gap: -20px;
+    width: 52vmin;
+    height: 48vmin;
+    margin: 0 auto;
 }
 
 .button-option {
     background-color: #6200ea;
     color: #ffffff;
-    height: 22vmin;
-    width: 22vmin;
+    height: 15vmin;
+    width: 15vmin;
     border: none;
     border-radius: 8px;
-    font-size: 12vmin;
+    font-size: 10vmin;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 #restart {
-    font-size: 1.3em;
+    font-size: 1em;
     padding: 1em;
     border-radius: 8px;
     background-color: #6200ea;
     color: #ffffff;
     border: none;
     position: relative;
-    margin: 1.5em auto 0 auto;
+    margin: 1.2em auto 0 auto;
     display: block;
 }
 
 .popup {
-    background-color: #0e0123;
-    height: 100%;
+    font-size: 6vmin;
+    position: fixed;
+    top: 69px;
+    /* Adjust based on your navbar height */
+    left: 0;
     width: 100%;
-    position: absolute;
+    height: calc(100vh - 56px);
+    /* Subtract the height of the navbar */
+    background-color: rgba(0, 0, 0);
+    /* Adjust for desired opacity */
     display: flex;
-    z-index: 2;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 1em;
-    font-size: 12vmin;
+    z-index: 1000;
 }
 
 #new-game {
@@ -112,4 +103,22 @@ h1 {
 
 .popup.hide {
     display: none;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        margin-top: -25%;
+        width: 17em;
+    }
+
+    .button-option {
+        height: 17vmin;
+        width: 17vmin;
+        font-size: 10vmin;
+    }
+
+    .container {
+        width: 60vmin;
+        height: 59vmin;
+    }
 }

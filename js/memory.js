@@ -9,6 +9,7 @@ let cards;
 let interval;
 let firstCard = false;
 let secondCard = false;
+
 //Items array
 const items = [
   { name: "bee", image: "../images/sloth.png" },
@@ -24,12 +25,15 @@ const items = [
   { name: "cockatoo", image: "../images/cockatoo.png" },
   { name: "toucan", image: "../images/toucan.png" },
 ];
+
 //Initial Time
 let seconds = 0,
   minutes = 0;
+
 //Initial moves and win count
 let movesCount = 0,
   winCount = 0;
+
 //For timer
 const timeGenerator = () => {
   seconds += 1;
@@ -38,16 +42,19 @@ const timeGenerator = () => {
     minutes += 1;
     seconds = 0;
   }
+
   //format time before displaying
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
   timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
 };
+
 //For calculating moves
 const movesCounter = () => {
   movesCount += 1;
   moves.innerHTML = `<span>Moves:</span>${movesCount}`;
 };
+
 //Pick random objects from the items array
 const generateRandom = (size = 4) => {
   //temporary array
@@ -65,6 +72,7 @@ const generateRandom = (size = 4) => {
   }
   return cardValues;
 };
+
 const matrixGenerator = (cardValues, size = 4) => {
   gameContainer.innerHTML = "";
   cardValues = [...cardValues, ...cardValues];
@@ -85,6 +93,7 @@ const matrixGenerator = (cardValues, size = 4) => {
      </div>
      `;
   }
+
   //Grid
   gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
   //Cards
@@ -137,6 +146,7 @@ const matrixGenerator = (cardValues, size = 4) => {
     });
   });
 };
+
 //Start game
 startButton.addEventListener("click", () => {
   movesCount = 0;
@@ -152,6 +162,7 @@ startButton.addEventListener("click", () => {
   moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
   initializer();
 });
+
 //Stop game
 stopButton.addEventListener(
   "click",
@@ -162,6 +173,7 @@ stopButton.addEventListener(
     clearInterval(interval);
   })
 );
+
 //Initialize values and func calls
 const initializer = () => {
   result.innerText = "";

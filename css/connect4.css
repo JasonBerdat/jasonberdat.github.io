@@ -1,87 +1,157 @@
-body{
-    overflow: hidden;
+/* Reset and global styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
 }
 
-.wrapper{
-    width: 36.75em;
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Heading styles */
+h1,
+h3 {
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin: 1em 0;
+}
+
+/* Container for the game page */
+.container-fluid#game-page {
+    padding-top: 80px;
+}
+
+/* Container styles */
+.container-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    /* Adjust max-width as needed */
+    padding: 20px;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Wrapper styles */
+.wrapper {
+    width: 100%;
+    max-width: 600px;
+    /* Adjust based on desired max size */
     background-color: #ffffff;
-    position: absolute;
     padding: 2em;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 10%;
     border-radius: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container{
+/* Game grid container */
+.container {
     margin: 1.25em auto;
-    width: 33.75em;
+    width: 100%;
+    max-width: 650px;
     border-radius: 0.6em;
     overflow: hidden;
     background-color: #333;
 }
 
-#information{
+/* Information section */
+#information {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
 }
 
-.player-wrappers{
+/* Player wrappers */
+.player-wrappers {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.player1:before{
+.player1:before,
+.player2:before {
     content: "";
     display: inline-block;
     width: 3.12em;
     height: 3.12em;
     border-radius: 50%;
+}
+
+.player1:before {
     background: radial-gradient(#211ae8 1.12em, #030a49 1.25em);
 }
 
-.player2:before{
-    content: "";
-    display: inline-block;
-    width: 3.12em;
-    height: 3.12em;
-    border-radius: 50%;
+.player2:before {
     background: radial-gradient(#ff4747 1.12em, #c00303 1.25em);
 }
 
-#playerTurn{
+/* Player turn */
+#playerTurn {
     margin: 1em 0;
-    text-align: right;
+    text-align: center;
 }
 
-#playerTurn span{
+#playerTurn span {
     font-weight: 600;
 }
 
-.startScreen{
+.dropdown-menu {
+    z-index: 1110;
+    /* Set higher z-index for the dropdown menu */
     position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: #121212;
+    /* Ensure it's positioned properly */
+}
+
+/* Start screen */
+.startScreen {
+    position: fixed;
+    top: 69px;
+    /* Adjust based on your navbar height */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 56px);
+    /* Subtract the height of the navbar */
+    background-color: rgba(0, 0, 0);
+    /* Adjust for desired opacity */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 }
 
-.startScreen button{
+
+.startScreen button {
     cursor: pointer;
 }
 
-.grid-row{
+/* Grid rows */
+.grid-row {
     margin: 0 auto;
     display: flex;
 }
 
-.grid-box{
+/* Grid boxes */
+.grid-box {
     width: 5em;
     height: 5em;
     display: grid;
@@ -90,12 +160,131 @@ body{
     cursor: pointer;
 }
 
-.hide{
+/* Hide class */
+.hide {
     display: none;
 }
 
-#message{
+/* Message styles */
+#message {
     margin-bottom: 1em;
     color: #ffffff;
     font-size: 1.2em;
+}
+
+/* Main menu */
+.main-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
+}
+
+/* Menu items */
+.menu-item,
+#menu-item {
+    color: #ffffff;
+    background-color: #333;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
+    justify-content: space-around;
+}
+
+.menu-item i,
+#menu-item i {
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.menu-item .item-name,
+#menu-item .item-name {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.menu-item:hover,
+#menu-item:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.menu-item:hover .item-name,
+#menu-item:hover .item-name {
+    display: block;
+    opacity: 0.9;
+}
+
+.menu-item:hover i,
+#menu-item:hover i {
+    transform: scale(1.2);
+}
+
+/* Content styles */
+.content {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* Label styles */
+label {
+    margin: 10px 0;
+}
+
+/* Button styles */
+button {
+    padding: 1em 2em;
+    border: none;
+    outline: none;
+    background-color: #6200ea;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 0.3em;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+/* Media query for larger screens to ensure proper spacing below navbar */
+@media (min-width: 768px) {
+    .container-fluid#game-page {
+        padding-top: 10px;
+        /* Adjust this value to create space below the navbar on larger screens */
+    }
+}
+
+/* Media query for smaller screens (portrait mode) */
+@media (max-width: 768px) and (orientation: portrait) {
+    .wrapper {
+        padding: 1em;
+        margin-top: 20px;
+        margin-bottom: 180px;
+        /* Adjust as needed */
+    }
+
+    .game-container {
+        width: 100%;
+        /* Adjust width for smaller screens */
+    }
+
+    .grid-box {
+        width: 3em;
+        /* Adjust size of grid boxes for smaller screens */
+        height: 3em;
+    }
 }
