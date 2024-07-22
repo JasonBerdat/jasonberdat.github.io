@@ -135,7 +135,7 @@ body {
     .box {
         width: calc(11em / 4 - 8px);
         height: calc(11em / 4 - 8px);
-        font-size: 31px;
+        font-size: 30.9px;
     }
 
     .score-container {
