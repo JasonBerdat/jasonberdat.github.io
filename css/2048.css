@@ -1,4 +1,8 @@
 /* Base styles */
+body {
+    overflow: hidden;
+}
+
 .container {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -182,13 +186,14 @@
     }
 
     .box {
-        width: calc(80% / 4 - 10px);
-        height: calc(80% / 4 - 10px);
-        font-size: 25px;
+        width: calc(20em / 4 - 10px);
+        height: calc(20em / 4 - 10px);
+        font-size: 21.5px;
     }
 
     .score-container {
         font-size: 1.2em;
+        margin-left: 27%;
     }
 
     #over-text {
@@ -214,12 +219,12 @@
     .box {
         width: calc(20em / 4 - 10px);
         height: calc(20em / 4 - 10px);
-        font-size: 17.55px;
+        font-size: 17.50px;
     }
 
     .score-container {
         font-size: 1.6em;
-        margin-left: 37%;
+        margin-left: 40%;
     }
 
     #over-text {
