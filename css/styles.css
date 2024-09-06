@@ -359,6 +359,22 @@ section {
   width: 75%;
 }
 
+.about-stats .progress-bars .progress-bar .progress-con .progress .csharp {
+  width: 80%;
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .core {
+  width: 50%;
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .sql {
+  width: 75%;
+}
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .azure {
+  width: 60%;
+}
+
 .about-stats .progress-bars .progress-bar .progress-con .progress .react {
   width: 60%;
 }
