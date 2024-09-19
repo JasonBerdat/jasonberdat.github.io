@@ -364,7 +364,7 @@ section {
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .core {
-  width: 50%;
+  width: 60%;
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .sql {
@@ -376,7 +376,7 @@ section {
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .react {
-  width: 60%;
+  width: 65%;
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress .node {
