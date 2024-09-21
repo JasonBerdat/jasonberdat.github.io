@@ -191,7 +191,6 @@ section {
 }
 
 .header-content .left-header .image img {
-  border-radius: var(--br-sm-2);
   width: 100%;
   height: 100%;
   object-fit: cover;
