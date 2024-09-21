@@ -27,33 +27,6 @@
     });
 })();
 
-// function filterCategory(category, element) {
-//     // Get all portfolio items and buttons
-//     let items = document.querySelectorAll('.portfolio-item');
-//     let buttons = document.querySelectorAll('.button-value');
-
-//     // Loop through all portfolio items and hide or show based on the selected category
-//     items.forEach((item) => {
-//         if (category === 'all') {
-//             item.style.display = 'block'; // Show all
-//         } else {
-//             if (item.id === category) {
-//                 item.style.display = 'block'; // Show items matching the category
-//             } else {
-//                 item.style.display = 'none'; // Hide items not matching the category
-//             }
-//         }
-//     });
-
-//     // Remove 'active' class from all buttons
-//     buttons.forEach((button) => {
-//         button.classList.remove('active');
-//     });
-
-//     // Add 'active' class to the clicked button
-//     element.classList.add('active');
-// }
-
 const buttons = document.querySelectorAll('#buttons button');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 const portfolioSection = document.getElementById('portfolio');

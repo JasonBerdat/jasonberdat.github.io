@@ -554,11 +554,8 @@ section {
 #buttons {
   display: flex;
   flex-wrap: wrap;
-  /* Allows the buttons to wrap on smaller screens */
   justify-content: center;
-  /* Centers the buttons horizontally */
   gap: 1rem;
-  /* Adds space between buttons */
   margin: 1rem 0;
 }
 
@@ -572,9 +569,7 @@ section {
   transition: background-color 0.5s ease, color 0.5s ease;
   animation: none;
   flex-grow: 1;
-  /* Ensures buttons take equal space */
   max-width: 200px;
-  /* Prevents buttons from getting too wide */
 }
 
 #buttons .active {
